@@ -12,6 +12,8 @@
 9. Converter 
 10. Armstrong Number 
 11. Reverse a Number
+12. Circle
+13. Rectangle
 More Features will be uploaded soon.
 
 
