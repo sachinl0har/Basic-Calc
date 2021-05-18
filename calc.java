@@ -7,7 +7,7 @@ public class calc {
         Scanner calc = new Scanner(System.in);
         System.out.print("\033[H\033[2J");
         while(e == 0){
-            System.out.println("\n1. Addition + \n2. Subtraction - \n3. Multipication * \n4. Division / \n5. Modulus % \n6. Hypotenuse \n7. Power of a Number \n8. Random Number \n9. Converter \n10. Armstrong Number \n11. Reverse a Number \n12. Circle \n13. Rectangle \n14. Tables \n15. Exit \nEnter Your Choice: \n");
+            System.out.println("\n1. Addition + \n2. Subtraction - \n3. Multipication * \n4. Division / \n5. Modulus % \n6. Hypotenuse \n7. Power of a Number \n8. Random Number \n9. Converter \n10. Armstrong Number \n11. Reverse a Number \n12. Circle \n13. Rectangle \n14. Tables \n15. Matrices \n16. Exit \nEnter Your Choice: \n");
         d = calc.nextInt();
         switch(d){
             case 1:
@@ -250,6 +250,166 @@ public class calc {
                 System.out.println(tNum + " x 10 = " + tNum * 10 + " \n");
                 break;
             case 15:
+                System.out.print("\033[H\033[2J");
+                int rows, rows1, columns, columns1, option2, i, j, k, rSum = 0;
+                int[][] matrix1 = new int[100][100], matrix2 = new int[100][100], mSum = new int[100][100];
+                Scanner matrix = new Scanner(System.in);
+                System.out.println("1. Addition \n2. Subtraction \n3. Multipication \n4. Transpose \nEnter Your Choice: ");
+                option2 = matrix.nextInt();
+                switch(option2){
+                    case 1:
+                        System.out.println("Enter Number of Rows: ");
+                        rows = matrix.nextInt();
+                        System.out.println("Enter Number of Columns: ");
+                        columns = matrix.nextInt();
+                        System.out.println("\nEnter elements of 1st matrix: \n");
+                        for(i = 0; i < rows; ++i){
+                            for(j = 0; j < columns; ++j){
+                            System.out.format("Enter Element A%d%d: ", i + 1, j + 1);
+                            matrix1[i][j] = matrix.nextInt();
+                            }
+                        }
+                        System.out.println("Enter element of 2nd matrix: ");
+                        for(i = 0; i < rows; ++i){
+                            for(j = 0; j < columns; ++j){
+                                System.out.format("Enter Element B%d%d: ", i + 1, j + 1);
+                                matrix2[i][j] = matrix.nextInt();
+                                }
+                            }
+                        for(i = 0; i < rows; ++i){
+                            for(j = 0; j < columns; ++j){
+                                mSum[i][j] = matrix1[i][j] + matrix2[i][j];
+                            }
+                        }
+                        System.out.println("\nSum of Two Matrices: \n");
+                        for(i = 0; i < rows; ++i){
+                            for(j = 0; j < columns; ++j){
+                                System.out.format("%d ", mSum[i][j]);
+                                if(j == columns - 1){
+                                    System.out.println("\n");
+                                }
+                            }
+                        }
+                break;
+                case 2:
+                    System.out.println("Enter Number of Rows: ");
+                    rows = matrix.nextInt();
+                    System.out.println("Enter Number of Columns: ");
+                    columns = matrix.nextInt();
+                    System.out.println("\nEnter elements of 1st matrix: \n");
+                    for(i = 0; i < rows; ++i){
+                        for(j = 0; j < columns; ++j){
+                            System.out.format("Enter Element A%d%d: ", i + 1, j + 1);
+                                matrix1[i][j] = matrix.nextInt();
+                        }
+                    }
+                    System.out.println("Enter element of 2nd matrix: ");
+                    for(i = 0; i < rows; ++i){
+                        for(j = 0; j < columns; ++j){
+                            System.out.format("Enter Element B%d%d: ", i + 1, j + 1);
+                            matrix2[i][j] = matrix.nextInt();
+                        }
+                    }
+                    for(i = 0; i < rows; ++i){
+                        for(j = 0; j < columns; ++j){
+                            mSum[i][j] = matrix1[i][j] - matrix2[i][j];
+                        }
+                    }
+                    System.out.println("\nDifference of Two Matrices: \n");
+                    for(i = 0; i < rows; ++i){
+                        for(j = 0; j < columns; ++j){
+                            System.out.format("%d ", mSum[i][j]);
+                            if(j == columns - 1){
+                                System.out.println("\n");
+                            }
+                        }
+                    }
+                    break;
+                case 3:
+                    System.out.println("Enter the number of rows of Matrix 1: ");
+                    rows = matrix.nextInt();
+                    System.out.println("Enter the number of columns of Matrix 1: ");
+                    columns = matrix.nextInt();
+                    matrix1 = new int[rows][columns];
+                    System.out.println("Enter elements of Matrix 1: ");
+                    for(i = 0; i < rows; ++i){
+                        for(j = 0; j < columns; ++j){
+                            System.out.format("Enter Element A%d%d: ", i + 1, j + 1);
+                                matrix1[i][j] = matrix.nextInt();
+                        }
+                    }
+                    System.out.println("Enter the number of rows of Matrix 2: ");
+                    rows1 = matrix.nextInt();
+                    System.out.println("Enter the number of columns of Matrix 2: ");
+                    columns1 = matrix.nextInt();
+                    if(columns != rows1){
+                        System.out.println("The Matrices cant be multiplied with each other as Number of columns of Matrix 1 id not equal to Number of rows of Matrix 2.");
+                    }else{
+                        int[][] second = new int[rows1][columns1];
+                        int[][] multiply = new int[rows][columns1];
+                    System.out.println("Enter Elements of Matrix 2: ");
+                    for(i = 0; i < rows1; ++i){
+                        for(j = 0; j < columns1; ++j){
+                            System.out.format("Enter Element A%d%d: ", i + 1, j + 1);
+                                second[i][j] = matrix.nextInt();
+                        }
+                    }
+                    for(i = 0; i < rows; i++){
+                        for(j = 0; j < columns; j++){
+                            for(k = 0; k < rows1; k++){
+                                rSum = rSum + matrix1[i][k] * second[k][j];
+                            }
+                            multiply[i][j] = rSum;
+                            rSum = 0;
+                        }
+                    }
+                    System.out.println("Product of the Matrices: ");
+                    for(i = 0; i < rows; i++){
+                        for(j = 0;j < columns1; j++){
+                            System.out.format("%d\t", multiply[i][j]);
+                            if(j == columns1 - 1){
+                            System.out.print("\n");
+                            }
+                        }
+                    }
+                    }
+                    break;
+                case 4:
+                    System.out.println("Enter Number of Rows: ");
+                    rows = matrix.nextInt();
+                    System.out.println("Enter Number of Columns: ");
+                    columns = matrix.nextInt();
+                    System.out.println("\nEnter elements of the matrix: \n");
+                    for(i = 0; i < rows; ++i){
+                        for(j = 0; j < columns; ++j){
+                            System.out.format("Enter Element A%d%d: ", i + 1, j + 1);
+                                matrix1[i][j] = matrix.nextInt();
+                        }
+                    }
+                    System.out.println("The Matrix is: ");
+                    for(i = 0; i < rows; i++){
+                        for(j = 0; j < columns; j++){
+                            System.out.print(matrix1[i][j] + " ");
+                        }
+                        System.out.println();
+                    }
+                    int[][] transpose = new int[columns][rows];
+                    for(i = 0; i < rows; i++){
+                        for(j = 0; j < columns; j++){
+                            transpose[i][j] = matrix1[j][i];
+                        }
+                    }
+                    System.out.println("Printing Matrix After Transpose: ");
+                    for(i = 0; i < rows; i++){
+                        for(j = 0; j < columns; j++){
+                            System.out.print(transpose[i][j] + " ");
+                        }
+                        System.out.println();
+                    }
+                    break;
+                }
+                break;
+            case 16:
                 System.out.print("\033[H\033[2J");
                 e = 1;
                 System.out.println("\nThank You For Visiting\n");
