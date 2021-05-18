@@ -14,6 +14,7 @@
 11. Reverse a Number
 12. Circle
 13. Rectangle
+14. Tables
 More Features will be uploaded soon.
 
 
