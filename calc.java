@@ -7,7 +7,7 @@ public class calc {
         Scanner calc = new Scanner(System.in);
         System.out.print("\033[H\033[2J");
         while(e == 0){
-            System.out.println("\n1. Addition + \n2. Subtraction - \n3. Multipication * \n4. Division / \n5. Modulus % \n6. Hypotenuse \n7. Power of a Number \n8. Random Number \n9. Converter \n10. Armstrong Number \n11. Reverse a Number \n12. Circle \n13. Rectangle \n14. Exit \nEnter Your Choice: \n");
+            System.out.println("\n1. Addition + \n2. Subtraction - \n3. Multipication * \n4. Division / \n5. Modulus % \n6. Hypotenuse \n7. Power of a Number \n8. Random Number \n9. Converter \n10. Armstrong Number \n11. Reverse a Number \n12. Circle \n13. Rectangle \n14. Tables \n15. Exit \nEnter Your Choice: \n");
         d = calc.nextInt();
         switch(d){
             case 1:
@@ -233,6 +233,23 @@ public class calc {
                 }
                 break;
             case 14:
+                System.out.print("\033[H\033[2J");
+                Scanner tables = new Scanner(System.in);
+                int tNum;
+                System.out.println("Enter a Number Whose Table you want to see: ");
+                tNum = tables.nextInt();
+                System.out.println("\n" + tNum + " x 1 = " + tNum * 1 + " \n");
+                System.out.println(tNum + " x 2 = " + tNum * 2 + " \n");
+                System.out.println(tNum + " x 3 = " + tNum * 3 + " \n");
+                System.out.println(tNum + " x 4 = " + tNum * 4 + " \n");
+                System.out.println(tNum + " x 5 = " + tNum * 5 + " \n");
+                System.out.println(tNum + " x 6 = " + tNum * 6 + " \n");
+                System.out.println(tNum + " x 7 = " + tNum * 7 + " \n");
+                System.out.println(tNum + " x 8 = " + tNum * 8 + " \n");
+                System.out.println(tNum + " x 9 = " + tNum * 9 + " \n");
+                System.out.println(tNum + " x 10 = " + tNum * 10 + " \n");
+                break;
+            case 15:
                 System.out.print("\033[H\033[2J");
                 e = 1;
                 System.out.println("\nThank You For Visiting\n");
