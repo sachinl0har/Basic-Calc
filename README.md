@@ -1,8 +1,8 @@
 # Basic-Calc-in-multiple-languages 
 
 ### Features:
-1. Addition + - Addition of Two Numbers.
-2. Subtraction - - Subtraction of Two Numbers.
+1. Addition + - Addition of N Numbers.
+2. Subtraction - - Subtraction of N Numbers.
 3. Multipication * - Multipication of Two Numbers.
 4. Division / - Division of two Numbers.
 5. Modulus % - Modulus of Two Numbers.
