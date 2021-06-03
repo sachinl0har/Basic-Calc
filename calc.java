@@ -2,8 +2,8 @@ import java.util.*;
 
 public class calc {
     public static void main(String[] args){
-        double a, b, c, e = 0, x, y, z;
-        int d;
+        double a, b, c = 0, e = 0, x, y, z;
+        int d, numS;
         Scanner calc = new Scanner(System.in);
         System.out.print("\033[H\033[2J");
         while(e == 0){
@@ -13,22 +13,30 @@ public class calc {
             case 1:
                 System.out.print("\033[H\033[2J");  
                 System.out.println("\nAddition\n");
-                System.out.println("Enter First Number: \n");
-                a = calc.nextDouble();
-                System.out.println("Enter Second Number: \n");
-                b = calc.nextDouble();
-                c = a + b;
-                System.out.println("\nThe Sum of " + a + " and " + b + " is " + c );
+                System.out.println("Enter How many Numbers you want to SUM: \n");
+                numS = calc.nextInt();
+                System.out.println("Enter the " + numS + " Numbers: \n");
+                for(int i = 1; i <= numS; i++){
+                    System.out.println("Enter Number " + (i) + " : \n");
+                    a = calc.nextDouble();
+                    c += a;
+                }
+                System.out.println("\nThe Sum of " + numS + " Numbers is " + c );
                 break;
             case 2:
                 System.out.print("\033[H\033[2J");  
                 System.out.println("\nSubtraction\n");
-                System.out.println("Enter First Number: \n");
-                a = calc.nextDouble();
-                System.out.println("Enter Second Number: \n");
-                b = calc.nextDouble();
-                c = a - b;
-                System.out.println("\nThe Difference Between " + a + " and " + b + " is " + c );
+                System.out.println("Enter How many Numbers you want to Substract: \n");
+                numS = calc.nextInt();
+                System.out.println("Enter Number 1: \n");
+                c = calc.nextDouble();
+                System.out.println("Enter the " + numS + " Numbers: \n");
+                for(int i = 2; i <= numS; i++){
+                    System.out.println("Enter Number " + (i) + " : \n");
+                    a = calc.nextDouble();
+                    c -= a;
+                }
+                System.out.println("\nThe Difference of " + numS + " Numbers is " + c );
                 break;
             case 3:
                 System.out.print("\033[H\033[2J");  
